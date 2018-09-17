@@ -26,8 +26,6 @@ initSwaggerMiddlware(app, resolve(__dirname), () => {
   // Custom error handler that returns JSON
   app.use(function (err, req: express.Request, res: express.Response, next) {
     if (err) {
-      log.error(err.stack || err.message || err.toString());
-      log.error(err);
       const errStr = err.message || err.toString();
       const errMsg = { message: errStr, extra: err };
       if (res.statusCode < 400) {
