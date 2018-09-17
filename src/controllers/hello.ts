@@ -15,10 +15,10 @@ export async function getHelloWorld(req: Request, res: Response): P<any> {
     res.send({ msg: "hello " + name + " " + surname} as Hello);
 }
 
-export async function getHelloWorldPost(req: Request, res: Response): P<any> {
+/* export async function getHelloWorldPost(req: Request, res: Response): P<any> {
     const greeting: Greeting =
     req.swagger.params && req.swagger.params.greeting.value ?
     req.swagger.params.greeting.value : { name: "world", surname: "world"} as Greeting;
     debug.log("Greeting: ", greeting);
     res.send({ msg: "hello " + greeting.name + " " + greeting.surname} as Hello);
-}
+} */

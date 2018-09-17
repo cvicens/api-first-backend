@@ -9,13 +9,15 @@ describe("Hello World - TEST GET ", function () {
     it("should be able to return hello xxx", (done: () => void): void => {
 
         chai.request(app)
-            .get("/api/hello?name=world&surname=world")
+            .get("/api/hello?greeting=world")
+// .get("/api/hello?name=world&surname=world")
             .set("content-type", "application/json")
             .send({})
             .end((err: Error, res: any): void => {
 
                 expect(res.statusCode).to.be.equal(200);
-                expect(res.body.msg).to.be.equal("hello world world");
+                // expect(res.body.msg).to.be.equal("hello world world");
+                expect(res.body.msg).to.be.equal("hello world");
                 done();
             });
     });
@@ -29,7 +31,8 @@ describe("Hello World - TEST GET ", function () {
             .end((err: Error, res: any): void => {
 
                 expect(res.statusCode).to.be.equal(400);
-                expect(res.body.message).to.be.equal("Request validation failed: Parameter (name) is required");
+                expect(res.body.message).to.be.equal("Request validation failed: Parameter (greeting) is required");
+                // expect(res.body.message).to.be.equal("Request validation failed: Parameter (name) is required");
                 done();
             });
     });
@@ -39,12 +42,14 @@ describe("Hello World - Test POST", function () {
     it("should be able to return hello xxx", (done: () => void): void => {
 
         chai.request(app)
-            .post("/api/hello")
+            .post("/api/hello?greeting=world")
             .set("content-type", "application/json")
-            .send({ name: "world", surname: "world"})
+            .send({})
+            // .send({ name: "world", surname: "world"})
             .end((err: Error, res: any): void => {
                 expect(res.statusCode).to.be.equal(200);
-                expect(res.body.msg).to.be.equal("hello world world");
+                expect(res.body.msg).to.be.equal("hello world");
+                // expect(res.body.msg).to.be.equal("hello world world");
                 done();
             });
     });
@@ -56,10 +61,10 @@ describe("Hello World - Test POST", function () {
             .set("content-type", "application/json")
             .send({})
             .end((err: Error, res: any): void => {
-
                 expect(res.statusCode).to.be.equal(400);
-                expect(res.body.message)
-                .to.be.equal("Request validation failed: Parameter (greeting) failed schema validation");
+                expect(res.body.message).to.be.equal("Request validation failed: Parameter (greeting) is required");
+               /*  expect(res.body.message)
+                .to.be.equal("Request validation failed: Parameter (greeting) failed schema validation"); */
                 done();
             });
     });
