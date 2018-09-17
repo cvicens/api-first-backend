@@ -5,62 +5,11 @@ import app from "../../src/application";
 import * as chai from "chai";
 const expect = chai.expect;
 chai.use(chaiHttp);
+
 describe("Hello World - TEST GET ", function () {
-    it("should be able to return hello xxx", (done: () => void): void => {
-
-        chai.request(app)
-            .get("/api/hello?name=world&surname=world")
-            .set("content-type", "application/json")
-            .send({})
-            .end((err: Error, res: any): void => {
-
-                expect(res.statusCode).to.be.equal(200);
-                expect(res.body.msg).to.be.equal("hello world world");
-                done();
-            });
-    });
-
-    it("should return an error for missing required parameters", (done: () => void): void => {
-
-        chai.request(app)
-            .get("/api/hello")
-            .set("content-type", "application/json")
-            .send({})
-            .end((err: Error, res: any): void => {
-
-                expect(res.statusCode).to.be.equal(400);
-                expect(res.body.message).to.be.equal("Request validation failed: Parameter (name) is required");
-                done();
-            });
-    });
+    // TODO: Add tests
 });
 
 describe("Hello World - Test POST", function () {
-    it("should be able to return hello xxx", (done: () => void): void => {
-
-        chai.request(app)
-            .post("/api/hello")
-            .set("content-type", "application/json")
-            .send({ name: "world", surname: "world"})
-            .end((err: Error, res: any): void => {
-                expect(res.statusCode).to.be.equal(200);
-                expect(res.body.msg).to.be.equal("hello world world");
-                done();
-            });
-    });
-
-    it("should return an error for missing required parameters", (done: () => void): void => {
-
-        chai.request(app)
-            .post("/api/hello")
-            .set("content-type", "application/json")
-            .send({})
-            .end((err: Error, res: any): void => {
-
-                expect(res.statusCode).to.be.equal(400);
-                expect(res.body.message)
-                .to.be.equal("Request validation failed: Parameter (greeting) failed schema validation");
-                done();
-            });
-    });
+    // TODO: Add tests
 });
