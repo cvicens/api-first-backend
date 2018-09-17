@@ -14,7 +14,7 @@ function loadDocumentSync(file: string): any {
     return YAML.load(readFileSync(file));
 }
 export const initSwaggerMiddlware = function (app: express.Express, basePath: string, cb: any) {
-    const swaggerDoc = loadDocumentSync(basePath + "/definition/swagger.yaml");
+    /* const swaggerDoc = loadDocumentSync(basePath + "/definition/swagger.yaml");
     const options = {
         controllers: basePath + "/routes",
         ignoreMissingHandlers: true,
@@ -38,5 +38,5 @@ export const initSwaggerMiddlware = function (app: express.Express, basePath: st
         }
         cb();
 
-    });
+    }); */
 };
