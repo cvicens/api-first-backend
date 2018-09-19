@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/src/index.js",
   "dependencies": {
-    "api": "git+https://github.com/misanche/api-first-api.git",
+    "api": "git+https://github.com/misanche/api-first-api.git#v2",
     "bluebird": "^3.5.1",
     "cls-hooked": "^4.2.2",
     "cors": "2.8.4",
