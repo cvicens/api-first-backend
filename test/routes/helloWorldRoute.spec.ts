@@ -5,7 +5,7 @@ import app from "../../src/application";
 import * as chai from "chai";
 const expect = chai.expect;
 chai.use(chaiHttp);
-/* describe("Hello World - TEST GET ", function () {
+describe("Hello World - TEST GET ", function () {
     it("should be able to return hello xxx", (done: () => void): void => {
 
         chai.request(app)
@@ -62,4 +62,4 @@ describe("Hello World - Test POST", function () {
                 done();
             });
     });
-}); */
+});
